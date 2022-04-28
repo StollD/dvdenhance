@@ -1,0 +1,19 @@
+#
+# Config for Farscape (Bluray)
+# 
+
+video:
+  "*":
+    codec: copy
+    color_range: tv
+    colorspace: bt709
+    color_trc: bt709
+    color_primaries: bt709
+audio:
+  "*":
+    codec: copy
+streams:
+  "*":
+    - lang == "eng" && track == "001101"
+    # Subtitles
+    - lang == "ger" && track == "001200"
