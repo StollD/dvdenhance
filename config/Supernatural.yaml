@@ -4,6 +4,12 @@
 
 video:
   "*":
+    codec: copy
+    color_range: tv
+    colorspace: bt709
+    color_trc: bt709
+    color_primaries: bt709
+  "S0[1-5]*":
     codec: libx264
     crf: 18
     tune: film
@@ -15,7 +21,7 @@ audio:
   "*":
     codec: copy
 streams:
-  "*":
+  "S0[1-2]*":
     # Audio
     - lang == "ger" && track == "001102"
     - lang == "eng" && track == "001100"
@@ -28,4 +34,10 @@ streams:
     - lang == "eng" && track == "001100"
     # Subtitles
     - lang == "ger" && track == "001204"
+    - lang == "eng" && track == "001200"
+  "S06*":
+    - lang == "ger" && track == "001102"
+    - lang == "eng" && track == "001100"
+    # Subtitles
+    - lang == "ger" && track == "001202"
     - lang == "eng" && track == "001200"
