@@ -35,7 +35,7 @@ streams:
     # Subtitles
     - lang == "ger" && track == "001204"
     - lang == "eng" && track == "001200"
-  "S06*":
+  "S0[6-7]*":
     - lang == "ger" && track == "001102"
     - lang == "eng" && track == "001100"
     # Subtitles
