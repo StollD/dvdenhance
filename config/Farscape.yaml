@@ -1,6 +1,6 @@
 #
 # Config for Farscape (Bluray)
-# 
+#
 
 video:
   "*":
@@ -14,6 +14,6 @@ audio:
     codec: copy
 streams:
   "*":
-    - lang == "eng" && track == "001101"
+    - lang == "eng" && (track == "001101" || track == "001100")
     # Subtitles
     - lang == "ger" && track == "001200"
