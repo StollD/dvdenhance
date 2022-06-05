@@ -1,0 +1,28 @@
+#
+# Config for Star Trek Voyager (PAL DVD)
+#
+
+filter: ../filter/Voyager.vpy
+framerate: 24000/1001
+video:
+  "*":
+    codec: libx264
+    preset: veryfast
+    crf: 14
+    color_range: tv
+    colorspace: bt470bg
+    color_trc: gamma28
+    color_primaries: bt470bg
+audio:
+  "*":
+    codec: libopus
+    bitrate: 64k
+    resampler: soxr
+streams:
+  "*":
+    # Audio
+    - lang == "ger" && (track == "0180BD" || track == "0181BD")
+    - lang == "eng" && (track == "0180BD" || track == "0181BD")
+    # Subtitles
+    - lang == "ger" && (track == "0121BD" || track == "0122BD" || track == "0123BD")
+    - lang == "eng" && (track == "0120BD" || track == "0121BD" || track == "0122BD")
