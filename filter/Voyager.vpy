@@ -50,7 +50,7 @@ detail = core.std.MakeDiff(luma, base)
 base = muvsfunc.GradFun3(base)
 
 # Remove softness from the PAL upscale
-base = core.descale.Debilinear(base, 640, 480)
+base = core.descale.Debilinear(base, 720, 480)
 base = havsfunc.santiag(base, fw=720, fh=576)
 
 # Remove ringing and halos
