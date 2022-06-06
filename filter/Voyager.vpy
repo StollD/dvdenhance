@@ -46,9 +46,6 @@ luma = core.std.ShufflePlanes(clip, 0, GRAY)
 base = core.fft3dfilter.FFT3DFilter(luma, sigma=10)
 detail = core.std.MakeDiff(luma, base)
 
-# Remove banding
-base = muvsfunc.GradFun3(base)
-
 # Remove softness from the PAL upscale
 base = core.descale.Debilinear(base, 720, 480)
 base = havsfunc.santiag(base, fw=720, fh=576)
@@ -56,6 +53,9 @@ base = havsfunc.santiag(base, fw=720, fh=576)
 # Remove ringing and halos
 base = havsfunc.HQDeringmod(base)
 base = havsfunc.FineDehalo(base)
+
+# Remove banding
+base = muvsfunc.GradFun3(base)
 
 # Recombine base and detail
 luma = core.std.MergeDiff(base, detail)
